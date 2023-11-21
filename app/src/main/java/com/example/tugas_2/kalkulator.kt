@@ -72,6 +72,8 @@ class kalkulator : AppCompatActivity() {
         val intent = Intent(this, Profile::class.java)
         intent.putExtra("User", newUsername)
         intent.putExtra("Pass", newPassword)
+
+
         startActivity(intent)
     }
 
