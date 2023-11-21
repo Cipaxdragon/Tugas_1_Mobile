@@ -36,52 +36,12 @@
         android:text="60900121064"
         android:textSize="16sp"
         android:layout_marginTop="4dp"/>
-    <TextView
-        android:id="@+id/usernameLabelTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/nimTextView"
-        android:layout_centerHorizontal="true"
-        android:text="Username:"
-        android:textSize="16sp"/>
-
-
-    <TextView
-        android:id="@+id/usernameValueTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/usernameLabelTextView"
-        android:layout_centerHorizontal="true"
-        android:text=""
-        android:textSize="14sp"
-        android:layout_marginTop="4dp"/>
-
-    <TextView
-        android:id="@+id/passwordLabelTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/usernameValueTextView"
-        android:layout_centerHorizontal="true"
-        android:text="Password:"
-        android:textSize="16sp"
-        android:layout_marginTop="1dp"/>
-
-    <TextView
-        android:id="@+id/passwordValueTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/passwordLabelTextView"
-        android:layout_centerHorizontal="true"
-        android:text=""
-        android:textSize="14sp"
-        android:layout_marginTop="4dp"/>
-
 
     <TextView
         android:id="@+id/descriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/passwordLabelTextView"
+        android:layout_below="@id/nimTextView"
         android:layout_centerHorizontal="true"
         android:text="@string/deskripsi_pengguna"
         android:textSize="14sp"

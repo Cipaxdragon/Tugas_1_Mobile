@@ -18,6 +18,7 @@ class Login : AppCompatActivity() {
     private lateinit var loginUsernameEditText: EditText
     private lateinit var loginPasswordEditText: EditText
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -52,6 +53,7 @@ class Login : AppCompatActivity() {
         if (enteredUsername == registeredUsername && enteredPassword == registeredPassword) {
             // Login berhasil, pindah ke aktivitas kalkulator
             val intent = Intent(this, kalkulator::class.java)
+            intent.putExtra("USERNAME", registeredUsername)
             startActivity(intent)
 
             // Tampilkan pesan berhasil atau lakukan tindakan lainnya

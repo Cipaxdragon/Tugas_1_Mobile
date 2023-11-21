@@ -1,5 +1,6 @@
 package com.example.tugas_2
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -8,15 +9,15 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class kalkulator : AppCompatActivity() {
-    private lateinit var loginUsernameEditText: EditText
-    private lateinit var loginPasswordEditText: EditText
 
     private lateinit var etNumber1: EditText
     private lateinit var etNumber2: EditText
     private lateinit var tvResult: TextView
+    private lateinit var usernem: TextView
+//    private lateinit var usernamek: TextView
 
 
-
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kalkulator)
@@ -24,19 +25,22 @@ class kalkulator : AppCompatActivity() {
         etNumber1 = findViewById(R.id.etNumber1)
         etNumber2 = findViewById(R.id.etNumber2)
         tvResult = findViewById(R.id.tvResult)
+        usernem = findViewById(R.id.tvUsername)
+
 
         // Menerima data dari aktivitas pendaftaran
         val extras = intent.extras
         if (extras != null) {
             val registeredUsername = extras.getString("USERNAME")
-            val registeredPassword = extras.getString("PASSWORD")
+//            usernamek.setText(registeredUsername)
 
-            // Set nilai ke EditText jika ada data yang dikirim
-            loginUsernameEditText.setText(registeredUsername)
-            loginPasswordEditText.setText(registeredPassword)
+            // Check if USERNAME is not null before using it
+            if (!registeredUsername.isNullOrBlank()) {
+                // Set nilai ke EditText jika ada data yang dikirim
+                usernem.text = "Welkom : $registeredUsername "
+            }
+
         }
-
-
     }
 
     fun onAdd(view: View) {
@@ -65,15 +69,9 @@ class kalkulator : AppCompatActivity() {
         tvResult.text = "Hasil: $result"
     }
     fun onProfileClick(view: View) {
-        val newUsername = loginUsernameEditText.text.toString()
-        val newPassword = loginPasswordEditText.text.toString()
-
+//        val newUsername = usernamek.text.toString()
         // Handle the click action, e.g., navigate to the profile activity
         val intent = Intent(this, Profile::class.java)
-        intent.putExtra("User", newUsername)
-        intent.putExtra("Pass", newPassword)
-
-
         startActivity(intent)
     }
 

@@ -4,35 +4,24 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EditText
+import android.widget.TextView
 
 class Profile : AppCompatActivity() {
-    private lateinit var loginUsernameEditText: EditText
-    private lateinit var loginPasswordEditText: EditText
-
+    private lateinit var usernem: TextView
+    val a = "asda";
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
+        usernem = findViewById(R.id.usernameTextView)
 
-        // Inisialisasi EditText
-        loginUsernameEditText = findViewById(R.id.usernameValueTextView)
-        loginPasswordEditText = findViewById(R.id.passwordValueTextView)
 
         val bek = findViewById<Button>(R.id.backButton)
-        bek.setOnClickListener {
+        bek.setOnClickListener{
             val intent = Intent(this, kalkulator::class.java)
             startActivity(intent)
         }
 
-        // Menerima data dari aktivitas pendaftaran
-        val extras = intent.extras
-        if (extras != null) {
-            val registeredUsername = extras.getString("USERNAME")
-            val registeredPassword = extras.getString("PASSWORD")
+        usernem.text = "Ahmad Ghazali"
 
-            // Set nilai ke EditText jika ada data yang dikirim
-            loginUsernameEditText.setText(registeredUsername)
-            loginPasswordEditText.setText(registeredPassword)
-        }
     }
 }
