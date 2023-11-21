@@ -9,68 +9,100 @@
     android:paddingBottom="16dp"
     tools:context=".kalkulator">
 
+    <!-- Circular Profile Image -->
+
+    <!-- Title -->
+
+    <ImageView
+        android:id="@+id/ivProfile"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+
+        android:onClick="onProfileClick"
+        android:src="@drawable/pp" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Kalkulator"
+        android:layout_marginTop="80dp"
+
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+
     <EditText
         android:id="@+id/etNumber1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter number 1"
+        android:hint="Masukan Angka Pertama"
         android:inputType="numberDecimal"
-        android:layout_marginBottom="8dp"/>
+        android:layout_below="@id/tvTitle" />
 
     <EditText
         android:id="@+id/etNumber2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter number 2"
+        android:hint="Masukan Angka Kedua"
         android:inputType="numberDecimal"
         android:layout_below="@id/etNumber1"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="30dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_below="@id/etNumber2"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btnAdd"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="+"
-            android:onClick="onAdd"/>
+            android:layout_weight="1"
+            android:onClick="onAdd"
+            android:text="+" />
 
         <Button
             android:id="@+id/btnSubtract"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="-"
-            android:onClick="onSubtract"/>
+            android:layout_weight="1"
+            android:onClick="onSubtract"
+            android:text="-" />
 
         <Button
             android:id="@+id/btnMultiply"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="X"
-            android:onClick="onMultiply"/>
+            android:layout_weight="1"
+            android:onClick="onMultiply"
+            android:text="X" />
 
         <Button
             android:id="@+id/btnDivide"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="-"
-            android:onClick="onDivide"/>
+            android:onClick="onDivide"
+            android:text=":" />
 
-        <TextView
-            android:id="@+id/tvResult"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="ResultNa: " />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etNumber2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:text="Hasil : "
+        android:textSize="24sp" />
 
 </RelativeLayout>

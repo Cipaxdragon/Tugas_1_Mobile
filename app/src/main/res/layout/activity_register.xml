@@ -45,13 +45,4 @@
         android:layout_marginTop="20dp"
         android:onClick="register"/>
 
-    <Button
-        android:id="@+id/alreadyHaveAccountButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sudah Punya Akun?"
-        android:layout_below="@id/registerButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:onClick="goToLogin"/>
 </RelativeLayout>
